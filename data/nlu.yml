@@ -26,6 +26,9 @@ nlu:
     - oczywiście
     - brzmi dobrze
     - poprawnie
+    - zdecydowanie 
+    - pewnie
+    - pewnie ze tak
 
 - intent: deny
   examples: |
@@ -36,6 +39,7 @@ nlu:
     - nie podaba mi się to
     - nie ma szans
     - na pewno nie
+    - chyba zartujesz
 
 - intent: mood_great
   examples: |
