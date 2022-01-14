@@ -11,23 +11,23 @@ intents:
 
 responses:
   utter_greet:
-  - text: "Hey! How are you?"
+  - text: "Hejo! Co tam?"
 
   utter_cheer_up:
-  - text: "Here is something to cheer you up:"
+  - text: "Uuuuu mam nadzieję, ze szybko sie poprawi"
     image: "https://i.imgur.com/nGF1K8f.jpg"
 
   utter_did_that_help:
-  - text: "Did that help you?"
+  - text: "Pomogłem?"
 
   utter_happy:
-  - text: "Great, carry on!"
+  - text: "Świetnie, pa!"
 
   utter_goodbye:
-  - text: "Bye"
+  - text: "Pa pa!"
 
   utter_iamabot:
-  - text: "I am a bot, powered by Rasa."
+  - text: "Czy jestem, hmm, jeśli potrafiłbym na to odpowiedzieć, to chyba bym nie był"
 
 session_config:
   session_expiration_time: 60

@@ -4,9 +4,33 @@ recipe: default.v1
 
 # Configuration for Rasa NLU.
 # https://rasa.com/docs/rasa/nlu/components/
-language: en
+language: pl
 
 pipeline:
+
+- name: WhitespaceTokenizer
+  intent_tokenization_flag: False
+
+- name: RegexFeaturizer
+
+- name: EntitySynonymMapper
+
+- name: CountVectorsFeaturizer
+  analyzer: char_wb
+  min_ngram: 1
+  max_ngram: 4
+
+- name: DIETClassifier
+  epochs: 300
+  random_seed: 12345679
+
+
+- name: ResponseSelector
+  epochs: 300
+  random_seed: 12345678
+
+# here add duckling for entity extraction
+
 # # No configuration for the NLU pipeline was provided. The following default pipeline was used to train your model.
 # # If you'd like to customize it, uncomment and adjust the pipeline.
 # # See https://rasa.com/docs/rasa/tuning-your-model for more information.
@@ -32,6 +56,31 @@ pipeline:
 # Configuration for Rasa Core.
 # https://rasa.com/docs/rasa/core/policies/
 policies:
+
+  - name: TEDPolicy
+    epochs: 200
+    batch_size: 50
+    max_training_samples: 300
+    random_seed: 12345676
+    # featurizer:
+    # - name: MaxHistoryTrackerFeaturizer
+    #   max_history: 5
+    #   state_featurizer:
+    #     - name: SingleStateFeaturizer
+
+  # - name: MappingPolicy
+
+  # - name: AugmentedMemoizationPolicy
+  #   max_history: 5
+
+  # - name: FallbackPolicy
+  #   nlu_threshold: 0.85
+  #   ambiguity_threshold: 0.1
+  #   core_threshold: 0.3
+  #   fallback_action_name: action_default_fallback
+
+  # - name: FormPolicy
+
 # # No configuration for policies was provided. The following default policies were used to train your model.
 # # If you'd like to customize them, uncomment and adjust the policies.
 # # See https://rasa.com/docs/rasa/policies for more information.
