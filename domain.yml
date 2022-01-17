@@ -52,7 +52,7 @@ responses:
   - text: "Tu, w tym miejscu, wytłumaczę Ci o co chodzi w pięknej grze zwanej ultimatum. Teraz, podaj swoją propozycję"
   
   utter_omit_rules:
-  - text: "To świetnie, lecimy dalej.Ppodaj swoją propozycję"
+  - text: "To świetnie, lecimy dalej. Podaj swoją propozycję"
 
   utter_thanks_for_playing:
   - text: "oki, dzięki za grę!"
