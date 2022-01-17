@@ -1,11 +1,13 @@
 # ChatBot for the Ultimatum game
-## Goals of this repository
+## State of work
 
-### Main objectives:
-* creating contextual chatbot able to conduct a simple conversation in polish
-* initiating and playing word game called [Ultimatum](https://www.wikiwand.com/en/Ultimatum_game)
-
-### Additional, optional features
-
-* winning? Research and implement agent able to not only play, but also win the game
-* Jokes - it would be nice if the bot could make up a joke on the spot
+- [x] Check if Rasa chatbot can communicate with Nao
+- [x] Prepare initial ultimatum game
+    - [x] Use slots to receive user input
+    - [x] Use custon action to utter robot's proposition
+    - [x] Conduct simple game via cli
+- [ ] Test integration with the robot
+- [ ] Explore possibility of using forms
+- [ ] Use duckling for entity extraction
+- [ ] Extend the dataset
+- [ ] Add more chitchat options
