@@ -16,7 +16,7 @@ nlu:
     - pa pa
     - nara
     - do zobaczenia
-
+    
 - intent: affirm
   examples: |
     - tak
@@ -72,3 +72,17 @@ nlu:
     - rozmawiam z botem?
     - rozmawiam z robotem?
     - rozmawiam z człowiekiem?
+
+- intent: wanna_play_ultimatum
+  examples: |
+    - zagrajmy w ultimatum
+    - chcę zagrać w ultimatum
+    - chciałbym zagrać w ultimatum
+    - mozemy zagrac w ultimatum
+
+- intent: ultimatum_proposition
+  examples: |
+    - wybieram [10](number)
+    - decyduje się na [5](number)
+    - chciałbym dostać [4](number)
+    - [6](number) brzmi rozsądnie

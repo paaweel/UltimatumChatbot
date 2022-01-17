@@ -2,29 +2,41 @@ version: "3.0"
 
 stories:
 
-- story: happy path
+- story: start ultimatum game
   steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_great
-  - action: utter_happy
+  - intent: wanna_play_ultimatum
+  - action: utter_ask_explain_ultimatum_rules
+  - checkpoint: checkpoint_rules_explanation_asked
 
-- story: sad path 1
+- story: explain rules
   steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
+  - checkpoint: checkpoint_rules_explanation_asked
   - intent: affirm
-  - action: utter_happy
+  - action: utter_ultimatum_rules
+  - checkpoint: checkpoint_rules_exlpained_done
 
-- story: sad path 2
+- story: omit rules explanation
   steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
+  - checkpoint: checkpoint_rules_explanation_asked
   - intent: deny
-  - action: utter_goodbye
+  - action: utter_omit_rules
+  - checkpoint: checkpoint_rules_exlpained_done
+  
+- story: ultimatum gameplay
+  steps:
+  - checkpoint: checkpoint_rules_exlpained_done
+  - intent: ultimatum_proposition
+  - action: action_play_ultimatum
+  - checkpoint: checkpoint_user_took_decision_ultimatum
+
+- story: ultimatum gameplay finish accepted
+  steps:
+  - checkpoint: checkpoint_user_took_decision_ultimatum
+  - intent: affirm
+  - action: utter_thanks_for_playing
+
+- story: ultimatum gameplay finish rejected
+  steps:
+  - checkpoint: checkpoint_user_took_decision_ultimatum
+  - intent: deny
+  - action: utter_thanks_for_playing

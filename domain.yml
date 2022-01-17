@@ -1,5 +1,16 @@
 version: "3.0"
 
+entities:
+  # TODO: use duckling for extraction?
+  - number
+
+slots:
+  ultimatum_user_propsition:
+    type: float
+    mappings:
+    - type: from_entity
+      entity: number
+
 intents:
   - greet
   - goodbye
@@ -8,6 +19,11 @@ intents:
   - mood_great
   - mood_unhappy
   - bot_challenge
+  - ultimatum_proposition
+  - wanna_play_ultimatum
+
+actions:
+ - action_play_ultimatum
 
 responses:
   utter_greet:
@@ -28,6 +44,18 @@ responses:
 
   utter_iamabot:
   - text: "Czy jestem botem? hmm, jeśli potrafiłbym na to rzetelenie odpowiedzieć, to chyba bym nie był"
+
+  utter_ask_explain_ultimatum_rules:
+  - text: "Opowiedzieć Ci o zasadach gry Ultimatum?"
+
+  utter_ultimatum_rules:
+  - text: "Tu, w tym miejscu, wytłumaczę Ci o co chodzi w pięknej grze zwanej ultimatum. Teraz, podaj swoją propozycję"
+  
+  utter_omit_rules:
+  - text: "To świetnie, lecimy dalej.Ppodaj swoją propozycję"
+
+  utter_thanks_for_playing:
+  - text: "oki, dzięki za grę!"
 
 session_config:
   session_expiration_time: 60

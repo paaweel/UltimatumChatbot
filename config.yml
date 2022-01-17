@@ -25,10 +25,12 @@ pipeline:
   random_seed: 12345679
   constrain_similarities: true
 
-
 - name: ResponseSelector
   epochs: 300
   random_seed: 12345678
+
+# - name: DucklingEntityExtractor
+#   dimensions: ["number"]
 
 # here add duckling for entity extraction
 
